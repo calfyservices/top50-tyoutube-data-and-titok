@@ -14,8 +14,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Fetch latest data
       run: |-
-        curl "https://api.livecounts.me/top50_tiktok/live?akey=API-_key-8UCD7P7h0IjG3rF9dfJ7ahY6pnVJOhnTFaAqogmKg&skey=KarFC9A5zo8LMBDyiCgzEJQMG3X5ermp43o4cjHwarAn50" > top50_tiktok.json
-        curl "https://api.livecounts.me/top50_youtube/live?akey=API-_key-8UCD7P7h0IjG3rF9dfJ7ahY6pnVJOhnTFaAqogmKg&skey=KarFC9A5zo8LMBDyiCgzEJQMG3X5ermp43o4cjHwarAn50" > top50_youtube.json
+        curl "https://api.livecounts.me/top50_tiktok/live?akey=API-_key-8UCD7P7h0IjG3rF9dfJ7ahY6pnVJOhnTFaAqogmKg&skey=KarFC9A5zo8LMBDyiCgzEJQMG3X5ermp43o4cjHwarAn50" | jq . > top50_tiktok.json
+        curl "https://api.livecounts.me/top50_youtube/live?akey=API-_key-8UCD7P7h0IjG3rF9dfJ7ahY6pnVJOhnTFaAqogmKg&skey=KarFC9A5zo8LMBDyiCgzEJQMG3X5ermp43o4cjHwarAn50" | jq . > top50_youtube.json
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
