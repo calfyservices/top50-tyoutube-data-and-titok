@@ -15,7 +15,7 @@ jobs:
     - name: Fetch latest data
       run: |-
         curl "https://api-yt-est.livecounts.lol/top50_tiktok/live?akey=API-_key-8UCD7P7h0IjG3rF9dfJ7ahY6pnVJOhnTFaAqogmKg&skey=KarFC9A5zo8LMBDyiCgzEJQMG3X5ermp43o4cjHwarAn50" | jq . > top50_tiktok.json
-        curl "https://api-yt-est.livecounts.lol/top50_yt/live?akey=API-_key-8UCD7P7h0IjG3rF9dfJ7ahY6pnVJOhnTFaAqogmKg&skey=KarFC9A5zo8LMBDyiCgzEJQMG3X5ermp43o4cjHwarAn50" | jq . > top50_youtube.json
+        curl "https://api-yt-est.livecounts.lol/top50_youtube/private/live" | jq . > top50_youtube.json
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
